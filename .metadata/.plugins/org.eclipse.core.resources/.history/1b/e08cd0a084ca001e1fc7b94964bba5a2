@@ -1,0 +1,25 @@
+package com.api.book.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.api.book.entity.Book;
+
+@Controller
+@RequestMapping("/home")
+public class BookRestController {
+	
+	@PostMapping("/create")
+	public List<Book> createBook(int id)
+	{
+		System.out.println("rest 1");
+		return null;
+		
+	}
+	
+	
+}

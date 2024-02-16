@@ -1,0 +1,51 @@
+package com.rest.api.book.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.rest.api.book.helper.FileUplodeHelper;
+
+@RestController
+public class FileUplodeControlller {
+
+	@Autowired
+	private FileUplodeHelper fileUplodeHelper;
+
+	@PostMapping("/uplode-file")
+	public ResponseEntity<String> uplodeFile(@RequestParam("file") MultipartFile file){
+//		System.out.println(file.getOriginalFilename());
+//		System.out.println(file.getContentType());
+//		System.out.println(file.getSize());
+//		System.out.println(file.getName());
+		
+		
+		try {
+			//validation
+			if(file.isEmpty()) {
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("file mustin containnt");
+			}	
+
+		
+			if(file.getContentType().equals("image/jpeg")) {
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("ONLY JPEG CONTAINT ALLOW");
+			}
+			
+			//file uplode  
+			boolean b = fileUplodeHelper.uplodeFile(file);
+			if(b) {
+				return ResponseEntity.ok("File is uploaded successfully");
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("some went wrong ! tyr again.");
+	}
+}

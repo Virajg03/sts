@@ -1,0 +1,14 @@
+package com.rest.api.book.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FileUplodeControlller {
+
+	@PostMapping("/uplode-file")
+	public ResponseEntity<String> uplodeFile(){
+		return ResponseEntity.ok("working");
+	}
+}

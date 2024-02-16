@@ -1,0 +1,9 @@
+package com.rest.api.book.helper;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FileUplodeHelper {
+
+	public final string UPLOAD_DIR = "";
+}

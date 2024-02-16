@@ -1,0 +1,9 @@
+package com.rest.api.book.controller;
+
+
+public class BookController {
+
+	public String getBook() {
+		return "this is testing book";
+	}
+}

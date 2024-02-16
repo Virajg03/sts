@@ -1,0 +1,11 @@
+package com.rest.api.book.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.rest.api.book.entities.Book;
+
+public class BookService {
+
+	private List<Book> list = new ArrayList<Book>();
+}

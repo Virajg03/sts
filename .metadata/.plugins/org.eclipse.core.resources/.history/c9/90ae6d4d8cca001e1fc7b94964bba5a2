@@ -1,0 +1,23 @@
+package com.rest.api.book.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rest.api.book.entities.Book;
+
+@RestController
+public class BookController {
+
+	@GetMapping("/books")
+	public Book getBook() {
+		Book book = new Book();
+		book.setId(1234);
+		book.setTitle("java complet Book");
+		book.setAuthor("jems")
+		return book;
+	}
+}

@@ -1,0 +1,14 @@
+package com.test;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class TestControlller {
+	@RequestMapping("/test")
+	public String test() {
+		int a = 50;
+		int b = 60;
+		return "this is testing" + (a + b);
+	}
+}

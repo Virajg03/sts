@@ -1,0 +1,5 @@
+package com.api.book.repository;
+
+public interface BookRepository implements JpaRe{
+
+}

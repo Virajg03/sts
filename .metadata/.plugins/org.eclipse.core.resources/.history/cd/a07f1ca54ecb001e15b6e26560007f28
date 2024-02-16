@@ -1,0 +1,9 @@
+package com.rest.api.book.helper;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FileUplodeHelper {
+
+	public final String UPLOAD_DIR = "C:\\Users\\Hello\\Documents\\workspace-spring-tool-suite-4-4.21.1.RELEASE\\book\\src\\main\\resources\\static";
+}

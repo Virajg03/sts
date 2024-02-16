@@ -1,0 +1,10 @@
+package com.test;
+
+public class TestControlller {
+
+	public String test() {
+		int a = 50;
+		int b = 60;
+		return "this is testing" + (a + b);
+	}
+}
